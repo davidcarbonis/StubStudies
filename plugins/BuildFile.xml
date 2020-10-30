@@ -1,0 +1,9 @@
+<library file="*.cc" name="StubStudiesPlugins">
+  <use name="FWCore/Framework"/>
+  <use name="FWCore/ParameterSet"/>
+  <use name="FWCore/PluginManager"/>
+  <use name="L1Trigger/StubStudies"/>
+  <flags EDM_PLUGIN="1"/>
+  <flags CXXFLAGS="-g -Wno-unused-variable -Wno-misleading-indentation"/>
+</library>
+

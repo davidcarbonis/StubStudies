@@ -1,0 +1,5 @@
+<bin file="StubRateTool.cpp" name="StubRateTool">
+    <use name="L1Trigger/StubStudies"/>
+    <use name="root"/>
+</bin>
+
