@@ -9,15 +9,15 @@
 #include "TLatex.h"
 
 const bool pT_eff = true;
-const bool dtcEmulation = false;
+const bool dtcEmulation = true;
 const bool isTmtt = false;
-const bool tightWindows = false;
+const bool tightWindows = true;
 
 void plotMacro()
 {
 
   std::string emulation_prefix = "";
-  if ( dtcEmulation ) std::string emulation_prefix = "dtc_";
+  if ( dtcEmulation ) emulation_prefix = "dtc_";
 
   std::string algo {};
   if ( isTmtt ) algo = "Tmtt";
@@ -36,7 +36,7 @@ void plotMacro()
   else variable = "eta";
 
    // Grab files
-   TFile*  inFile1 = new TFile ( (emulation_prefix+inputSample+"_output/StubRateToolOutput/output"+algo+"Old"+windows+".root").c_str() );
+   TFile*  inFile1 = new TFile ( (inputSample+"_output/StubRateToolOutput/"+emulation_prefix+"output"+algo+"Old"+windows+".root").c_str() );
 
     // Load in histos from files
     TH1F* h_layer1_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_1_Stub").c_str() );
