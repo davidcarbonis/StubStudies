@@ -5,63 +5,56 @@
 #include "TROOT.h"
 #include "TH1F.h"
 #include "TLegend.h"
+#include "TLegendEntry.h"
 #include "TStyle.h"
 #include "TLatex.h"
 
-const bool pT_eff = true;
-const bool dtcEmulation = true;
-const bool isTmtt = false;
-const bool tightWindows = true;
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <regex>
 
-void plotMacro()
+void plotMacro(std::string inputFile, bool pT_eff = true)
 {
 
-  std::string emulation_prefix = "";
-  if ( dtcEmulation ) emulation_prefix = "dtc_";
-
-  std::string algo {};
-  if ( isTmtt ) algo = "Tmtt";
-  else algo = "Hybrid";
-
-  std::string windows {};
-  if ( tightWindows ) windows = "Tight";
-  else windows = "Loose";
-
-  std::string inputSample = "TTbar";
-//  std::string inputSample = "SingleMuPt1p5to8";
-//  std::string inputSample = "SingleElPt1p5to8";
+  std::cout << "input File: " << inputFile << std::endl;
 
   std::string variable {};
   if ( pT_eff ) variable = "pt";
   else variable = "eta";
 
+  std::string outputPath = inputFile;
+  std::regex pattern(".root");
+  outputPath = std::regex_replace(outputPath, pattern, "");
+  std::cout << "outputPath: " << outputPath << std::endl;
+
    // Grab files
-   TFile*  inFile1 = new TFile ( (inputSample+"_output/StubRateToolOutput/"+emulation_prefix+"output"+algo+"Old"+windows+".root").c_str() );
+   TFile*  inFile = new TFile ( inputFile.c_str() );
 
     // Load in histos from files
-    TH1F* h_layer1_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_1_Stub").c_str() );
-    TH1F* h_layer1_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_1_Cluster").c_str() );
-    TH1F* h_layer2_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_2_Stub").c_str() );
-    TH1F* h_layer2_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_2_Cluster").c_str() );
-    TH1F* h_layer3_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_3_Stub").c_str() );
-    TH1F* h_layer3_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_3_Cluster").c_str() );
-    TH1F* h_layer4_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_4_Stub").c_str() );
-    TH1F* h_layer4_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_4_Cluster").c_str() );
-    TH1F* h_layer5_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_5_Stub").c_str() );
-    TH1F* h_layer5_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_5_Cluster").c_str() );
-    TH1F* h_layer6_Stub    = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_6_Stub").c_str() );
-    TH1F* h_layer6_Cluster = (TH1F*)inFile1->Get( ("Barrel_"+variable+"_6_Cluster").c_str() );
+    TH1F* h_layer1_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_1_Stub").c_str() );
+    TH1F* h_layer1_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_1_Cluster").c_str() );
+    TH1F* h_layer2_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_2_Stub").c_str() );
+    TH1F* h_layer2_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_2_Cluster").c_str() );
+    TH1F* h_layer3_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_3_Stub").c_str() );
+    TH1F* h_layer3_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_3_Cluster").c_str() );
+    TH1F* h_layer4_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_4_Stub").c_str() );
+    TH1F* h_layer4_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_4_Cluster").c_str() );
+    TH1F* h_layer5_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_5_Stub").c_str() );
+    TH1F* h_layer5_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_5_Cluster").c_str() );
+    TH1F* h_layer6_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_6_Stub").c_str() );
+    TH1F* h_layer6_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_6_Cluster").c_str() );
 
-    TH1F* h_disk1_Stub     = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_1_Stub").c_str() );
-    TH1F* h_disk1_Cluster  = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_1_Cluster").c_str() );
-    TH1F* h_disk2_Stub     = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_2_Stub").c_str() );
-    TH1F* h_disk2_Cluster  = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_2_Cluster").c_str() );
-    TH1F* h_disk3_Stub     = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_3_Stub").c_str() );
-    TH1F* h_disk3_Cluster  = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_3_Cluster").c_str() );
-    TH1F* h_disk4_Stub     = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_4_Stub").c_str() );
-    TH1F* h_disk4_Cluster  = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_4_Cluster").c_str() );
-    TH1F* h_disk5_Stub     = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_5_Stub").c_str() );
-    TH1F* h_disk5_Cluster  = (TH1F*)inFile1->Get( ("Endcap_"+variable+"_5_Cluster").c_str() );
+    TH1F* h_disk1_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_1_Stub").c_str() );
+    TH1F* h_disk1_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_1_Cluster").c_str() );
+    TH1F* h_disk2_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_2_Stub").c_str() );
+    TH1F* h_disk2_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_2_Cluster").c_str() );
+    TH1F* h_disk3_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_3_Stub").c_str() );
+    TH1F* h_disk3_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_3_Cluster").c_str() );
+    TH1F* h_disk4_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_4_Stub").c_str() );
+    TH1F* h_disk4_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_4_Cluster").c_str() );
+    TH1F* h_disk5_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_5_Stub").c_str() );
+    TH1F* h_disk5_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_5_Cluster").c_str() );
 
    // Setup canvas
 
@@ -265,7 +258,7 @@ void plotMacro()
    Canvas_barrel->Modified();
    Canvas_barrel->cd();
    Canvas_barrel->SetSelected(Canvas_barrel);
-   Canvas_barrel->SaveAs( (inputSample+"_"+emulation_prefix+algo+"_Old"+windows+"_layer_"+variable+"_eff.pdf").c_str() );
+   Canvas_barrel->SaveAs( (outputPath+"_layer_eff.pdf").c_str() );
 
    TCanvas *Canvas_endcap = new TCanvas("Canvas_endcap", "Canvas_endcap",0,0,1280,925);
    gStyle->SetOptStat(0);
@@ -438,6 +431,6 @@ void plotMacro()
    Canvas_endcap->Modified();
    Canvas_endcap->cd();
    Canvas_endcap->SetSelected(Canvas_endcap);
-   Canvas_endcap->SaveAs( (inputSample+"_"+emulation_prefix+algo+"_Old"+windows+"_disk_"+variable+"_eff.pdf").c_str() );
+   Canvas_endcap->SaveAs( (outputPath+"_disk_eff.pdf").c_str() );
 
 }

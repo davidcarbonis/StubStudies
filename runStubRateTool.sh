@@ -1,0 +1,32 @@
+echo TTbar output
+StubRateTool -i TTbar_output/outputHybridOldLoose.root -o TTbar_output/StubRateToolOutput/outputHybridOldLoose.root
+StubRateTool -i TTbar_output/outputHybridOldTight.root -o TTbar_output/StubRateToolOutput/outputHybridOldTight.root
+StubRateTool -i TTbar_output/outputTmttOldLoose.root -o TTbar_output/StubRateToolOutput/outputTmttOldLoose.root
+StubRateTool -i TTbar_output/outputTmttOldTight.root -o TTbar_output/StubRateToolOutput/outputTmttOldTight.root
+echo TTbar output + dtc emulation
+StubRateTool -i TTbar_output/dtc_outputHybridOldLoose.root -o TTbar_output/StubRateToolOutput/dtc_outputHybridOldLoose.root
+StubRateTool -i TTbar_output/dtc_outputHybridOldTight.root -o TTbar_output/StubRateToolOutput/dtc_outputHybridOldTight.root
+StubRateTool -i TTbar_output/dtc_outputTmttOldLoose.root -o TTbar_output/StubRateToolOutput/dtc_outputTmttOldLoose.root
+StubRateTool -i TTbar_output/dtc_outputTmttOldTight.root -o TTbar_output/StubRateToolOutput/dtc_outputTmttOldTight.root
+#
+echo SingleEl output
+StubRateTool -i SingleElPt1p5to8_output/outputHybridOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/outputHybridOldLoose.root
+StubRateTool -i SingleElPt1p5to8_output/outputHybridOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/outputHybridOldTight.root
+StubRateTool -i SingleElPt1p5to8_output/outputTmttOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/outputTmttOldLoose.root
+StubRateTool -i SingleElPt1p5to8_output/outputTmttOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/outputTmttOldTight.root
+echo SingleEl output + dtc emulation
+StubRateTool -i SingleElPt1p5to8_output/dtc_outputHybridOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldLoose.root
+StubRateTool -i SingleElPt1p5to8_output/dtc_outputHybridOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldTight.root
+StubRateTool -i SingleElPt1p5to8_output/dtc_outputTmttOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldLoose.root
+StubRateTool -i SingleElPt1p5to8_output/dtc_outputTmttOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldTight.root
+#
+echo SingleMu output
+StubRateTool -i SingleMuPt1p5to8_output/outputHybridOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/outputHybridOldLoose.root
+StubRateTool -i SingleMuPt1p5to8_output/outputHybridOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/outputHybridOldTight.root
+StubRateTool -i SingleMuPt1p5to8_output/outputTmttOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/outputTmttOldLoose.root
+StubRateTool -i SingleMuPt1p5to8_output/outputTmttOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/outputTmttOldTight.root
+echo SingleMu output + dtc emulation
+StubRateTool -i SingleMuPt1p5to8_output/dtc_outputHybridOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldLoose.root
+StubRateTool -i SingleMuPt1p5to8_output/dtc_outputHybridOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldTight.root
+StubRateTool -i SingleMuPt1p5to8_output/dtc_outputTmttOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldLoose.root
+StubRateTool -i SingleMuPt1p5to8_output/dtc_outputTmttOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldTight.root
