@@ -28,8 +28,8 @@ int main(int argc, char* argv[]){
 
     std::string inputFile {"output.root"};
     std::string outputFile {"analysisOutput.root"};
-    float nEvents {100000};
-    std::string particleName {"mu"};
+    float nEvents {10000000000};
+    std::string particleName {"all"};
 
     // Loop for parsing command line arguments.
     for (int i = 1; i < argc; ++i){
@@ -245,9 +245,11 @@ void StubRateAnalysis::Loop(TString fname, float Nin, TString pname){
 
   if (fChain == 0) return;
   int pid = 0;
-  if (pname == "mu") pid = 13;
-  if (pname == "ele") pid = 11;
-  if (pname == "pion") pid = 211;
+  if (pname == "all") pid = 0;
+  else if (pname == "mu") pid = 13;
+  else if (pname == "ele") pid = 11;
+  else if (pname == "pion") pid = 211;
+  else if (pname == "tau") pid = 15;
   Int_t nentries = (Int_t) fChain->GetEntries();
   float N = Nin;
   Long64_t nbytes = 0, nb = 0;
@@ -303,7 +305,7 @@ void StubRateAnalysis::Loop(TString fname, float Nin, TString pname){
 
 //find efficiency     
     for (unsigned int k=0; k<stubEff_tp_pt->size(); ++k) {
-      if(abs(stubEff_tp_pdgid->at(k))!=pid) continue;
+      if(abs(stubEff_tp_pdgid->at(k))!=pid && pid != 0) continue; // pid flag is not 0 (all particles) and not another valid pid, continue;
       HistsEff[1][0][0][0]->Fill(abs(stubEff_tp_eta->at(k)),float(stubEff_BL1->at(k)));
       HistsEff[1][1][0][0]->Fill(abs(stubEff_tp_eta->at(k)),float(stubEff_BL2->at(k)));
       HistsEff[1][2][0][0]->Fill(abs(stubEff_tp_eta->at(k)),float(stubEff_BL3->at(k)));

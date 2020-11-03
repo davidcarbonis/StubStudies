@@ -29,6 +29,9 @@ options.register("L1Algo", 'HYBRID', opts.VarParsing.multiplicity.singleton, opt
 #--- Specify stub window to be used
 options.register("StubWindow", 'OLD_TIGHT', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "Stub window to be used")
 
+#--- Specify the track nTuple process 
+options.register('Process', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int,"Track nTuple process")
+
 options.parseArguments()
 
 ############################################################
@@ -229,7 +232,7 @@ process.remakeStubs = cms.Path(process.TrackTriggerClustersStubs * process.Track
 ############################################################
 
 process.L1TrackNtuple = cms.EDAnalyzer('L1TrackNtupleMakerStubStudy',
-                                       MyProcess = cms.int32(1),
+                                       MyProcess = cms.int32(options.Process),
                                        DebugMode = cms.bool(False),      # printout lots of debug statements
                                        SaveAllTracks = cms.bool(True),   # save *all* L1 tracks, not just truth matched to primary particle
                                        SaveStubs = cms.bool(True),      # save some info for *all* stubs

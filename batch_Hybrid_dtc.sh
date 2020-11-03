@@ -11,14 +11,14 @@ eval `scramv1 runtime -sh`
 
 export LD_LIBRARY_PATH=`pwd`/lib/:`pwd`/lib64/:${LD_LIBRARY_PATH}
 
-cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./TTBar_PU200.txt Events=-1 output=file:./TTbar_output/dtc_outputHybridOldTight_alt.root L1Algo=HYBRID StubWindow=OLD_TIGHT
-#cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./TTBar_PU200.txt Events=-1 output=file:./TTbar_output/dtc_outputHybridOldLoose_alt.root L1Algo=HYBRID StubWindow=OLD_LOOSE
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./TTBar_PU200.txt Events=-1 output=file:./TTbar_output/dtc_outputHybridOldTight.root L1Algo=HYBRID StubWindow=OLD_TIGHT
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./TTBar_PU200.txt Events=-1 output=file:./TTbar_output/dtc_outputHybridOldLoose.root L1Algo=HYBRID StubWindow=OLD_LOOSE
 
-#cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleElPt1p5to8_PU0.txt Events=-1 output=file:./SingleElPt1p5to8_output/dtc_outputHybridOldTight_alt.root L1Algo=HYBRID StubWindow=OLD_TIGHT
-#cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleElPt1p5to8_PU0.txt Events=-1 output=file:./SingleElPt1p5to8_output/dtc_outputHybridOldLoose_alt.root L1Algo=HYBRID StubWindow=OLD_LOOSE
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleElPt1p5to8_PU0.txt Events=-1 output=file:./SingleElPt1p5to8_output/dtc_outputHybridOldTight.root L1Algo=HYBRID StubWindow=OLD_TIGHT
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleElPt1p5to8_PU0.txt Events=-1 output=file:./SingleElPt1p5to8_output/dtc_outputHybridOldLoose.root L1Algo=HYBRID StubWindow=OLD_LOOSE
 
-#cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleMuPt1p5to8_PU0.txt Events=-1 output=file:./SingleMuPt1p5to8_output/dtc_outputHybridOldTight_alt.root L1Algo=HYBRID StubWindow=OLD_TIGHT
-#cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleMuPt1p5to8_PU0.txt Events=-1 output=file:./SingleMuPt1p5to8_output/dtc_outputHybridOldLoose_alt.root L1Algo=HYBRID StubWindow=OLD_LOOSE
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleMuPt1p5to8_PU0.txt Events=-1 output=file:./SingleMuPt1p5to8_output/dtc_outputHybridOldTight.root L1Algo=HYBRID StubWindow=OLD_TIGHT
+cmsRun test/L1TrackNtupleMaker_DTC_cfg.py inputMC=./SingleMuPt1p5to8_PU0.txt Events=-1 output=file:./SingleMuPt1p5to8_output/dtc_outputHybridOldLoose.root L1Algo=HYBRID StubWindow=OLD_LOOSE
 
 echo "\nEnd of job on " `date` "\n"
 
