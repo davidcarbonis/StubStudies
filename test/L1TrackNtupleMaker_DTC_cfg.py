@@ -32,6 +32,9 @@ options.register("StubWindow", 'OLD_TIGHT', opts.VarParsing.multiplicity.singlet
 #--- Specify the track nTuple process
 options.register('Process', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int,"Track nTuple process")
 
+#--- Specify whether DTC truncation occurs
+options.register('Truncation', True, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.bool, "DTC Truncation enabled/disabled")
+
 options.parseArguments()
 
 ############################################################
@@ -171,9 +174,10 @@ process.remakeStubs = cms.Path(process.TrackTriggerClustersStubs * process.Track
 
 # load code that produces DTCStubs
 process.load( 'L1Trigger.TrackerDTC.ProducerED_cff' )
-process.TrackerDTCProducer.InputTag       = cms.InputTag( "TTStubsFromPhase2TrackerDigis", "StubAccepted" )
-process.TrackerDTCProducer.BranchAccepted = cms.string ( "StubAccepted" )
-process.TrackerDTCProducer.BranchLost     = cms.string ( "StubLost" )
+process.TrackerDTCProducer.InputTag         = cms.InputTag( "TTStubsFromPhase2TrackerDigis", "StubAccepted" )
+process.TrackerDTCProducer.BranchAccepted   = cms.string ( "StubAccepted" )
+process.TrackerDTCProducer.BranchLost       = cms.string ( "StubLost" )
+process.TrackerDTCProducer.EnableTruncation = cms.bool ( options.Truncation )
 process.produceDTCStubs = cms.Path( process.TrackerDTCProducer )
 
 # load code that converts DTCStubs into TTStubsO
