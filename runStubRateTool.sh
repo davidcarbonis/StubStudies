@@ -8,6 +8,10 @@ StubRateTool -i TTbar_output/dtc_outputHybridOldLoose.root -o TTbar_output/StubR
 StubRateTool -i TTbar_output/dtc_outputHybridOldTight.root -o TTbar_output/StubRateToolOutput/dtc_outputHybridOldTight.root --particle="all"
 StubRateTool -i TTbar_output/dtc_outputTmttOldLoose.root -o TTbar_output/StubRateToolOutput/dtc_outputTmttOldLoose.root --particle="all"
 StubRateTool -i TTbar_output/dtc_outputTmttOldTight.root -o TTbar_output/StubRateToolOutput/dtc_outputTmttOldTight.root --particle="all"
+StubRateTool -i TTbar_output/dtc_noTruncation_outputHybridOldLoose.root -o TTbar_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldLoose.root --particle="all"
+StubRateTool -i TTbar_output/dtc_noTruncation_outputHybridOldTight.root -o TTbar_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldTight.root --particle="all"
+StubRateTool -i TTbar_output/dtc_noTruncation_outputTmttOldLoose.root -o TTbar_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldLoose.root --particle="all"
+StubRateTool -i TTbar_output/dtc_noTruncation_outputTmttOldTight.root -o TTbar_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldTight.root --particle="all"
 #
 echo SingleEl output
 StubRateTool -i SingleElPt1p5to8_output/outputHybridOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/outputHybridOldLoose.root --particle="ele"
@@ -19,6 +23,10 @@ StubRateTool -i SingleElPt1p5to8_output/dtc_outputHybridOldLoose.root -o SingleE
 StubRateTool -i SingleElPt1p5to8_output/dtc_outputHybridOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldTight.root --particle="ele"
 StubRateTool -i SingleElPt1p5to8_output/dtc_outputTmttOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldLoose.root --particle="ele"
 StubRateTool -i SingleElPt1p5to8_output/dtc_outputTmttOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldTight.root --particle="ele"
+StubRateTool -i SingleElPt1p5to8_output/dtc_noTruncation_outputHybridOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldLoose.root --particle="ele"
+StubRateTool -i SingleElPt1p5to8_output/dtc_noTruncation_outputHybridOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldTight.root --particle="ele"
+StubRateTool -i SingleElPt1p5to8_output/dtc_noTruncation_outputTmttOldLoose.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldLoose.root --particle="ele"
+StubRateTool -i SingleElPt1p5to8_output/dtc_noTruncation_outputTmttOldTight.root -o SingleElPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldTight.root --particle="ele"
 #
 echo SingleMu output
 StubRateTool -i SingleMuPt1p5to8_output/outputHybridOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/outputHybridOldLoose.root --particle="mu"
@@ -30,3 +38,7 @@ StubRateTool -i SingleMuPt1p5to8_output/dtc_outputHybridOldLoose.root -o SingleM
 StubRateTool -i SingleMuPt1p5to8_output/dtc_outputHybridOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputHybridOldTight.root --particle="mu"
 StubRateTool -i SingleMuPt1p5to8_output/dtc_outputTmttOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldLoose.root --particle="mu"
 StubRateTool -i SingleMuPt1p5to8_output/dtc_outputTmttOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_outputTmttOldTight.root --particle="mu"
+StubRateTool -i SingleMuPt1p5to8_output/dtc_noTruncation_outputHybridOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldLoose.root --particle="mu"
+StubRateTool -i SingleMuPt1p5to8_output/dtc_noTruncation_outputHybridOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldTight.root --particle="mu"
+StubRateTool -i SingleMuPt1p5to8_output/dtc_noTruncation_outputTmttOldLoose.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldLoose.root --particle="mu"
+StubRateTool -i SingleMuPt1p5to8_output/dtc_noTruncation_outputTmttOldTight.root -o SingleMuPt1p5to8_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldTight.root --particle="mu"
