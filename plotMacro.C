@@ -9,16 +9,12 @@
 #include "TStyle.h"
 #include "TLatex.h"
 
-#include <iostream>
-#include <sstream>
-#include <string>
-
 #include "TString.h"
 #include "TPRegexp.h"
 
 void plotMacro(TString inputFile, bool pT_eff = true)
 {
-  std::string variable {};
+  TString variable {};
   if ( pT_eff ) variable = "pt";
   else variable = "eta";
 
@@ -29,29 +25,29 @@ void plotMacro(TString inputFile, bool pT_eff = true)
    TFile*  inFile = new TFile ( inputFile );
 
     // Load in histos from files
-    TH1F* h_layer1_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_1_Stub").c_str() );
-    TH1F* h_layer1_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_1_Cluster").c_str() );
-    TH1F* h_layer2_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_2_Stub").c_str() );
-    TH1F* h_layer2_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_2_Cluster").c_str() );
-    TH1F* h_layer3_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_3_Stub").c_str() );
-    TH1F* h_layer3_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_3_Cluster").c_str() );
-    TH1F* h_layer4_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_4_Stub").c_str() );
-    TH1F* h_layer4_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_4_Cluster").c_str() );
-    TH1F* h_layer5_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_5_Stub").c_str() );
-    TH1F* h_layer5_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_5_Cluster").c_str() );
-    TH1F* h_layer6_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_6_Stub").c_str() );
-    TH1F* h_layer6_Cluster = (TH1F*)inFile->Get( ("Barrel_"+variable+"_6_Cluster").c_str() );
+    TH1F* h_layer1_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_1_Stub" );
+    TH1F* h_layer1_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_1_Cluster" );
+    TH1F* h_layer2_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_2_Stub" );
+    TH1F* h_layer2_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_2_Cluster" );
+    TH1F* h_layer3_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_3_Stub" );
+    TH1F* h_layer3_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_3_Cluster" );
+    TH1F* h_layer4_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_4_Stub" );
+    TH1F* h_layer4_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_4_Cluster" );
+    TH1F* h_layer5_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_5_Stub" );
+    TH1F* h_layer5_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_5_Cluster" );
+    TH1F* h_layer6_Stub    = (TH1F*)inFile->Get( "Barrel_"+variable+"_6_Stub" );
+    TH1F* h_layer6_Cluster = (TH1F*)inFile->Get( "Barrel_"+variable+"_6_Cluster" );
 
-    TH1F* h_disk1_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_1_Stub").c_str() );
-    TH1F* h_disk1_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_1_Cluster").c_str() );
-    TH1F* h_disk2_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_2_Stub").c_str() );
-    TH1F* h_disk2_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_2_Cluster").c_str() );
-    TH1F* h_disk3_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_3_Stub").c_str() );
-    TH1F* h_disk3_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_3_Cluster").c_str() );
-    TH1F* h_disk4_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_4_Stub").c_str() );
-    TH1F* h_disk4_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_4_Cluster").c_str() );
-    TH1F* h_disk5_Stub     = (TH1F*)inFile->Get( ("Endcap_"+variable+"_5_Stub").c_str() );
-    TH1F* h_disk5_Cluster  = (TH1F*)inFile->Get( ("Endcap_"+variable+"_5_Cluster").c_str() );
+    TH1F* h_disk1_Stub     = (TH1F*)inFile->Get( "Endcap_"+variable+"_1_Stub" );
+    TH1F* h_disk1_Cluster  = (TH1F*)inFile->Get( "Endcap_"+variable+"_1_Cluster" );
+    TH1F* h_disk2_Stub     = (TH1F*)inFile->Get( "Endcap_"+variable+"_2_Stub" );
+    TH1F* h_disk2_Cluster  = (TH1F*)inFile->Get( "Endcap_"+variable+"_2_Cluster" );
+    TH1F* h_disk3_Stub     = (TH1F*)inFile->Get( "Endcap_"+variable+"_3_Stub" );
+    TH1F* h_disk3_Cluster  = (TH1F*)inFile->Get( "Endcap_"+variable+"_3_Cluster" );
+    TH1F* h_disk4_Stub     = (TH1F*)inFile->Get( "Endcap_"+variable+"_4_Stub" );
+    TH1F* h_disk4_Cluster  = (TH1F*)inFile->Get( "Endcap_"+variable+"_4_Cluster" );
+    TH1F* h_disk5_Stub     = (TH1F*)inFile->Get( "Endcap_"+variable+"_5_Stub" );
+    TH1F* h_disk5_Cluster  = (TH1F*)inFile->Get( "Endcap_"+variable+"_5_Cluster" );
 
    // Setup canvas
 
@@ -255,7 +251,7 @@ void plotMacro(TString inputFile, bool pT_eff = true)
    Canvas_barrel->Modified();
    Canvas_barrel->cd();
    Canvas_barrel->SetSelected(Canvas_barrel);
-   Canvas_barrel->SaveAs( outputPath+("_layer_"+variable+"_eff.pdf").c_str() );
+   Canvas_barrel->SaveAs( outputPath+"_layer_"+variable+"_eff.pdf" );
 
    TCanvas *Canvas_endcap = new TCanvas("Canvas_endcap", "Canvas_endcap",0,0,1280,925);
    gStyle->SetOptStat(0);
@@ -398,27 +394,27 @@ void plotMacro(TString inputFile, bool pT_eff = true)
    leg_endcap->SetLineWidth(1);
    leg_endcap->SetFillColor(0);
    leg_endcap->SetFillStyle(1001);
-   TLegendEntry *entry_endcap = leg_endcap->AddEntry("endcap_1_Stub", "Disk 1","P");
+   TLegendEntry *entry_endcap = leg_endcap->AddEntry("Endcap_1_Stub", "Disk 1","P");
    entry_endcap->SetMarkerColor(2);
    entry_endcap->SetMarkerStyle(25);
    entry_endcap->SetMarkerSize(2);
    entry_endcap->SetTextFont(42);
-   entry_endcap=leg_endcap->AddEntry("endcap_2_Stub", "Disk 2","P");
+   entry_endcap=leg_endcap->AddEntry("Endcap_2_Stub", "Disk 2","P");
    entry_endcap->SetMarkerColor(3);
    entry_endcap->SetMarkerStyle(20);
    entry_endcap->SetMarkerSize(2);
    entry_endcap->SetTextFont(42);
-   entry_endcap=leg_endcap->AddEntry("endcap_3_Stub", "Disk 3","P");
+   entry_endcap=leg_endcap->AddEntry("Endcap_3_Stub", "Disk 3","P");
    entry_endcap->SetMarkerColor(4);
    entry_endcap->SetMarkerStyle(21);
    entry_endcap->SetMarkerSize(2);
    entry_endcap->SetTextFont(42);
-   entry_endcap=leg_endcap->AddEntry("endcap_4_Stub", "Disk 4","P");
+   entry_endcap=leg_endcap->AddEntry("Endcap_4_Stub", "Disk 4","P");
    entry_endcap->SetMarkerColor(1);
    entry_endcap->SetMarkerStyle(22);
    entry_endcap->SetMarkerSize(2);
    entry_endcap->SetTextFont(42);
-   entry_endcap=leg_endcap->AddEntry("endcap_5_Stub", "Disk 5","P");
+   entry_endcap=leg_endcap->AddEntry("Endcap_5_Stub", "Disk 5","P");
    entry_endcap->SetMarkerColor(6);
    entry_endcap->SetMarkerStyle(23);
    entry_endcap->SetMarkerSize(2);
@@ -428,6 +424,6 @@ void plotMacro(TString inputFile, bool pT_eff = true)
    Canvas_endcap->Modified();
    Canvas_endcap->cd();
    Canvas_endcap->SetSelected(Canvas_endcap);
-   Canvas_endcap->SaveAs( outputPath+("_disk_"+variable+"_eff.pdf").c_str() );
+   Canvas_endcap->SaveAs( outputPath+"_disk_"+variable+"_eff.pdf" );
 
 }
