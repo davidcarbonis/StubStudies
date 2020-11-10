@@ -426,4 +426,8 @@ void plotMacro(TString inputFile, bool pT_eff = true)
    Canvas_endcap->SetSelected(Canvas_endcap);
    Canvas_endcap->SaveAs( outputPath+"_disk_"+variable+"_eff.pdf" );
 
+   inFile->Close();
+   delete Canvas_barrel;
+   delete Canvas_endcap;
+
 }
