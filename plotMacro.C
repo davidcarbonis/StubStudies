@@ -12,20 +12,21 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <regex>
 
-void plotMacro(std::string inputFile, bool pT_eff = true)
+#include "TString.h"
+#include "TPRegexp.h"
+
+void plotMacro(TString inputFile, bool pT_eff = true)
 {
   std::string variable {};
   if ( pT_eff ) variable = "pt";
   else variable = "eta";
 
-  std::string outputPath = inputFile;
-  std::regex pattern(".root");
-  outputPath = std::regex_replace(outputPath, pattern, "");
+  TString outputPath = inputFile;
+  TPRegexp(".root").Substitute(outputPath, "","g");
 
    // Grab files
-   TFile*  inFile = new TFile ( inputFile.c_str() );
+   TFile*  inFile = new TFile ( inputFile );
 
     // Load in histos from files
     TH1F* h_layer1_Stub    = (TH1F*)inFile->Get( ("Barrel_"+variable+"_1_Stub").c_str() );
@@ -254,7 +255,7 @@ void plotMacro(std::string inputFile, bool pT_eff = true)
    Canvas_barrel->Modified();
    Canvas_barrel->cd();
    Canvas_barrel->SetSelected(Canvas_barrel);
-   Canvas_barrel->SaveAs( (outputPath+"_layer_"+variable+"_eff.pdf").c_str() );
+   Canvas_barrel->SaveAs( outputPath+("_layer_"+variable+"_eff.pdf").c_str() );
 
    TCanvas *Canvas_endcap = new TCanvas("Canvas_endcap", "Canvas_endcap",0,0,1280,925);
    gStyle->SetOptStat(0);
@@ -427,6 +428,6 @@ void plotMacro(std::string inputFile, bool pT_eff = true)
    Canvas_endcap->Modified();
    Canvas_endcap->cd();
    Canvas_endcap->SetSelected(Canvas_endcap);
-   Canvas_endcap->SaveAs( (outputPath+"_disk_"+variable+"_eff.pdf").c_str() );
+   Canvas_endcap->SaveAs( outputPath+("_disk_"+variable+"_eff.pdf").c_str() );
 
 }
