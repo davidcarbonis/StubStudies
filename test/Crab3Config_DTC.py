@@ -33,7 +33,7 @@ stubWindow = StubWindow("OldTight", "OLD_TIGHT")
 #stubWindow = StubWindow("NewTight", "NEW_TIGHT")
 #stubWindow = StubWindow("NewLoose", "NEW_LOOSE")
 
-DtcTruncation = nametuple("DtcTruncation", process dtctruncation")
+DtcTruncation = namedtuple("DtcTruncation", "process dtctruncation")
 dtcTruncation = DtcTruncation("noTruncation", "False")
 #dtcTruncation = DtcTruncation("truncation", "True")
 
@@ -41,7 +41,7 @@ time = datetime.now().strftime("%Y%m%d%H%M%S")
 
 config = config()
 
-config.General.requestName = '{}_{}_{}_{}_{}'.format(dataset.process, algoArg.process, stubWindow.process, dtcTruncation.process time)
+config.General.requestName = '{}_{}_{}_{}_{}'.format(dataset.process, algoArg.process, stubWindow.process, dtcTruncation.process, time)
 config.General.workArea = 'crab_projects'
 
 config.JobType.pluginName = 'Analysis'
