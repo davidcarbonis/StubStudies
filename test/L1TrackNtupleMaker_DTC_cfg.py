@@ -166,6 +166,56 @@ elif (STUBWINDOW == 'OLD_TIGHT'):
     )
 ) 
 
+elif (STUBWINDOW == 'NEW_LOOSE):
+  print "Using Reza Goldouzian's new loose window tuning"
+
+  process.TTStubAlgorithm_official_Phase2TrackerDigi_ = cms.ESProducer("TTStubAlgorithm_official_Phase2TrackerDigi_",
+    zMatchingPS  = cms.bool(True),
+    zMatching2S  = cms.bool(True),
+    #Number of tilted rings per side in barrel layers (for tilted geom only)
+    NTiltedRings = cms.vdouble( 0., 12., 12., 12., 0., 0., 0.),
+    BarrelCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0 ),
+    TiltedBarrelCutSet = cms.VPSet(
+      cms.PSet( TiltedCut = cms.vdouble( 0 ) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+    ),
+    EndcapCutSet = cms.VPSet(
+      cms.PSet( EndcapCut = cms.vdouble( 0 ) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0) ),
+    )
+)
+
+elif (STUBWINDOW == 'NEW_TIGHT):
+  print "Using Reza Goldouzian's new tight window tuning"
+
+  process.TTStubAlgorithm_official_Phase2TrackerDigi_ = cms.ESProducer("TTStubAlgorithm_official_Phase2TrackerDigi_",
+    zMatchingPS  = cms.bool(True),
+    zMatching2S  = cms.bool(True),
+    #Number of tilted rings per side in barrel layers (for tilted geom only)
+    NTiltedRings = cms.vdouble( 0., 12., 12., 12., 0., 0., 0.),
+    BarrelCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ),
+    TiltedBarrelCutSet = cms.VPSet(
+      cms.PSet( TiltedCut = cms.vdouble( 0 ) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( TiltedCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+    ),
+    EndcapCutSet = cms.VPSet(
+      cms.PSet( EndcapCut = cms.vdouble( 0 ) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+      cms.PSet( EndcapCut = cms.vdouble( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) ),
+    )
+)
+
 process.remakeStubs = cms.Path(process.TrackTriggerClustersStubs * process.TrackTriggerAssociatorClustersStubs)
 
 ############################################################
