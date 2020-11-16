@@ -45,7 +45,7 @@ config.General.requestName = '{}_{}_{}_{}_{}'.format(dataset.process, algoArg.pr
 config.General.workArea = 'crab_projects'
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'L1TrackNtupleMaker_cfg.py'
+config.JobType.psetName = 'L1TrackNtupleMaker_DTC_cfg.py'
 config.JobType.pyCfgParams=["L1Algo="+algoArg.algoarg, "StubWindow="+stubWindow.stubwindow, "Truncation="+dtcTruncation.dtctruncation]
 
 config.Data.inputDataset = dataset.dataset
