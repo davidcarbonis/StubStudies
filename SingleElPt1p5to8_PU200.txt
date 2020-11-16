@@ -1,5 +1,0 @@
-file:/vols/cms/adm10/MC/TMTT/MCsamples/1120/RelVal/SingleElPt1p5to8/PU200/00479D08-8990-844B-A665-5DE9EB687BBD.root
-file:/vols/cms/adm10/MC/TMTT/MCsamples/1120/RelVal/SingleElPt1p5to8/PU200/004D95BB-B32F-EC4C-AC8A-3037FDF91CE1.root
-file:/vols/cms/adm10/MC/TMTT/MCsamples/1120/RelVal/SingleElPt1p5to8/PU200/00549879-3B89-5B47-88B7-D98834300760.root
-file:/vols/cms/adm10/MC/TMTT/MCsamples/1120/RelVal/SingleElPt1p5to8/PU200/00A0E829-3E27-2447-93A4-D799770B8C69.root
-file:/vols/cms/adm10/MC/TMTT/MCsamples/1120/RelVal/SingleElPt1p5to8/PU200/01157BA2-0504-5D47-9401-3553CC47FB0F.root

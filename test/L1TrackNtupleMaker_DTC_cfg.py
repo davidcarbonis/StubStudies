@@ -90,11 +90,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(options.Even
 #else:
 #    print "this is not a valid geometry!!!"
 
-list = FileUtils.loadListFromFile(options.inputMC)
-readFiles = cms.untracked.vstring(*list) 
+#list = FileUtils.loadListFromFile(options.inputMC)
+#readFiles = cms.untracked.vstring(*list) 
     
 #process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
-process.source = cms.Source("PoolSource", fileNames = readFiles)
+#process.source = cms.Source("PoolSource", fileNames = readFiles)
+process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
 
 process.TFileService = cms.Service("TFileService", fileName = cms.string(options.output), closeFileFast = cms.untracked.bool(True))
 process.Timing = cms.Service("Timing", summaryOnly = cms.untracked.bool(True))
