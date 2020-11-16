@@ -10,10 +10,12 @@
 #include <TCanvas.h>
 #include <TRandom3.h>
 #include <TLorentzVector.h>
+
 #include <time.h>
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <filesystem>
 
 static void show_usage(std::string name){
   std::cerr << "Usage: " << name << " <options>"
@@ -26,7 +28,7 @@ static void show_usage(std::string name){
 
 int main(int argc, char* argv[]){
 
-    std::string inputFile {"output.root"};
+    std::string inputDirectory {};
     std::string outputFile {"analysisOutput.root"};
     float nEvents {10000000000};
     std::string particleName {"all"};
@@ -48,9 +50,9 @@ int main(int argc, char* argv[]){
           particleName = argv[++i];
         }
       }
-      else if (arg=="-i"){//Set input file
+      else if (arg=="-i"){//Set input directory
         if (i + 1 < argc){
-  	  inputFile = argv[++i];
+  	  inputDirectory = argv[++i];
         } 
       }
       else if (arg=="-o"){//Set output file
@@ -62,7 +64,11 @@ int main(int argc, char* argv[]){
     } // End command line arguments loop.
 
     TChain* ch = new TChain("L1TrackNtuple/eventTree") ;
-    ch->Add( inputFile.c_str() );
+
+    // Iterate over files in directory
+    for(auto& file : std::filesystem::directory_iterator(inputDirectory)) {
+        ch->Add( file.path().c_str() );
+    }
     StubRateAnalysis t1(ch);
     t1.Loop( outputFile.c_str(), nEvents, particleName.c_str());
 }
