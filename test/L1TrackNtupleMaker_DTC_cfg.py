@@ -166,7 +166,7 @@ elif (STUBWINDOW == 'OLD_TIGHT'):
     )
 ) 
 
-elif (STUBWINDOW == 'NEW_LOOSE):
+elif (STUBWINDOW == 'NEW_LOOSE'):
   print "Using Reza Goldouzian's new loose window tuning"
 
   process.TTStubAlgorithm_official_Phase2TrackerDigi_ = cms.ESProducer("TTStubAlgorithm_official_Phase2TrackerDigi_",
@@ -191,7 +191,7 @@ elif (STUBWINDOW == 'NEW_LOOSE):
     )
 )
 
-elif (STUBWINDOW == 'NEW_TIGHT):
+elif (STUBWINDOW == 'NEW_TIGHT'):
   print "Using Reza Goldouzian's new tight window tuning"
 
   process.TTStubAlgorithm_official_Phase2TrackerDigi_ = cms.ESProducer("TTStubAlgorithm_official_Phase2TrackerDigi_",
