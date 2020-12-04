@@ -27,7 +27,7 @@ options.register("Geometry", "D49", opts.VarParsing.multiplicity.singleton, opts
 options.register("L1Algo", 'HYBRID', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "L1 Tracking algo used")
 
 #--- Specify stub window to be used
-options.register("StubWindow", 'OLD_TIGHT', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "Stub window to be used")
+options.register("StubWindow", '', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "Stub window to be used")
 
 #--- Specify the track nTuple process 
 options.register('Process', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int,"Track nTuple process")
@@ -87,12 +87,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(options.Even
 #else:
 #    print "this is not a valid geometry!!!"
 
-#list = FileUtils.loadListFromFile(options.inputMC)
-#readFiles = cms.untracked.vstring(*list) 
-    
+list = FileUtils.loadListFromFile(options.inputMC)
+readFiles = cms.untracked.vstring(*list)
 #process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
-#process.source = cms.Source("PoolSource", fileNames = readFiles)
-process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
+process.source = cms.Source("PoolSource", fileNames = readFiles)
+
+#process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
 
 process.TFileService = cms.Service("TFileService", fileName = cms.string(options.output), closeFileFast = cms.untracked.bool(True))
 process.Timing = cms.Service("Timing", summaryOnly = cms.untracked.bool(True))

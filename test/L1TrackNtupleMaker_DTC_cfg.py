@@ -27,7 +27,7 @@ options.register("Geometry", "D49", opts.VarParsing.multiplicity.singleton, opts
 options.register("L1Algo", 'HYBRID', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "L1 Tracking algo used")
 
 #--- Specify stub window to be used
-options.register("StubWindow", 'OLD_TIGHT', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "Stub window to be used")
+options.register("StubWindow", '', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, "Stub window to be used")
 
 #--- Specify the track nTuple process
 options.register('Process', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int,"Track nTuple process")
@@ -90,12 +90,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(options.Even
 #else:
 #    print "this is not a valid geometry!!!"
 
-#list = FileUtils.loadListFromFile(options.inputMC)
-#readFiles = cms.untracked.vstring(*list) 
-    
-#process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
-#process.source = cms.Source("PoolSource", fileNames = readFiles)
-process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
+list = FileUtils.loadListFromFile(options.inputMC)
+readFiles = cms.untracked.vstring(*list)
+##process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
+process.source = cms.Source("PoolSource", fileNames = readFiles)
+
+#process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
 
 process.TFileService = cms.Service("TFileService", fileName = cms.string(options.output), closeFileFast = cms.untracked.bool(True))
 process.Timing = cms.Service("Timing", summaryOnly = cms.untracked.bool(True))
@@ -225,10 +225,23 @@ process.remakeStubs = cms.Path(process.TrackTriggerClustersStubs * process.Track
 
 # load code that produces DTCStubs
 process.load( 'L1Trigger.TrackerDTC.ProducerED_cff' )
-process.TrackerDTCProducer.InputTag         = cms.InputTag( "TTStubsFromPhase2TrackerDigis", "StubAccepted" )
-process.TrackerDTCProducer.BranchAccepted   = cms.string ( "StubAccepted" )
-process.TrackerDTCProducer.BranchLost       = cms.string ( "StubLost" )
-process.TrackerDTCProducer.EnableTruncation = cms.bool ( options.Truncation )
+
+process.TrackTriggerSetup.ProcessHistory.TTStubAlgorithm = cms.string( "TTStubAlgorithm_official_Phase2TrackerDigi_" )
+
+process.TrackerDTCProducer.InputTag          = cms.InputTag( "TTStubsFromPhase2TrackerDigis", "StubAccepted", "L1TrackNtuple" )
+process.TrackerDTCProducer.BranchAccepted    = cms.string ( "StubAccepted" )
+process.TrackerDTCProducer.BranchLost        = cms.string ( "StubLost" )
+process.TrackerDTCProducer.EnableTruncation  = cms.bool ( options.Truncation )
+
+if ( L1TRKALGO == 'TMTT' ) : process.TrackerDTCProducer.UseHybrid = cms.bool ( False )
+else : process.TrackerDTCProducer.UseHybrid = cms.bool ( True )
+process.TrackTriggerSetup.TMTT.MinPt         = cms.double ( 2.0 )
+process.TrackTriggerSetup.Hybrid.MinPt       = cms.double ( 2.0 )
+#process.TrackerDTCProducer.CheckHistory     = cms.bool ( True ) # Default is false for some reason ...
+
+if (STUBWINDOW == 'OLD_LOOSE'): process.TrackTriggerSetup.FrontEnd.BendCut        = cms.double(  1.9385 )  # used stub bend uncertainty in pitch units ## 1.3125
+
+
 process.produceDTCStubs = cms.Path( process.TrackerDTCProducer )
 
 # load code that converts DTCStubs into TTStubsO
@@ -388,7 +401,6 @@ process.L1TrackNtuple = cms.EDAnalyzer('L1TrackNtupleMakerStubStudy',
 process.ana = cms.Path(process.L1TrackNtuple)
 
 process.schedule = cms.Schedule(process.remakeStubs, process.produceDTCStubs, process.convertDTCStubs, process.associateDTCStubs, process.TTTracksEmulationWithTruth, process.ana)
-#process.schedule = cms.Schedule(process.remakeStubs, process.produceDTCStubs, process.convertDTCStubs, process.associateDTCStubs)
 
 ############################################################
 # write output dataset?
