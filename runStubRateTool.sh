@@ -1,3 +1,18 @@
+#!/bin/bash
+
+#!/bin/bash
+fail_exit() { echo "$@" 1>&2; exit 1; }
+
+echo "Start of job on " `date`
+
+cd /home/hep/adm10/CMSSW/CMSSW_11_2_0_pre6/src/L1Trigger/StubStudies/
+
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+
+eval `scramv1 runtime -sh`
+
+export LD_LIBRARY_PATH=`pwd`/lib/:`pwd`/lib64/:${LD_LIBRARY_PATH}
+
 echo TTbar + PU0 output
 # all particles
 StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/TTbar_PU0_output/Hybrid_OldLoose/ -o /vols/cms/adm10/MC/TMTT/StubStudies/TTbar_PU0_output/StubRateToolOutput/outputHybridOldLoose_all.root --particle="all"
@@ -207,3 +222,6 @@ StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_ou
 StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/dtc_Hybrid_OldTight_noTruncation/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/StubRateToolOutput/dtc_noTruncation_outputHybridOldTight.root --particle="mu"
 StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/dtc_Tmtt_OldLoose_noTruncation/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldLoose.root --particle="mu"
 StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/dtc_Tmtt_OldTight_noTruncation/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU200_output/StubRateToolOutput/dtc_noTruncation_outputTmttOldTight.root --particle="mu"
+
+echo "\nEnd of job on " `date` "\n"
+
