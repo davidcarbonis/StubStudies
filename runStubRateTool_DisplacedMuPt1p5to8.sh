@@ -18,7 +18,7 @@ export LD_LIBRARY_PATH=`pwd`/lib/:`pwd`/lib64/:${LD_LIBRARY_PATH}
 #StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Hybrid_DefaultWindows/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputHybridDefaultWindows.root --particle="mu"
 #StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Hybrid_OldLoose/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputHybridOldLoose.root --particle="mu"
 #StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Hybrid_OldTight/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputHybridOldTight.root --particle="mu"
-#StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Tmtt_OldDefaultWindows/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputTmttDefaultWindows.root --particle="mu" 
+#StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Tmtt_DefaultWindows/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputTmttDefaultWindows.root --particle="mu" 
 #StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Tmtt_OldLoose/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputTmttOldLoose.root --particle="mu" 
 #StubRateTool -i /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/Tmtt_OldTight/ -o /vols/cms/adm10/MC/TMTT/StubStudies/DisplacedMuPt1p5To8_PU0_output/StubRateToolOutput/outputTmttOldTight.root --particle="mu"
 #echo DisplacedMu output + PU0 + dtc emulation
