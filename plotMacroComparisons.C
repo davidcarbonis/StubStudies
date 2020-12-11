@@ -109,7 +109,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_1_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_1_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_1_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_1_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_1_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_1_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_1_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_1_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -137,7 +137,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_2_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_2_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_2_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_2_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_2_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_2_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_2_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_2_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -154,7 +154,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_3_eff1->Divide(h_layer_3_eff1, dynamic_cast<TH1F*>(h_layer3_Cluster1), 1, 1);
    TH1F* h_layer_3_eff2 = (TH1F*)h_layer3_Stub2->Clone();
    h_layer_3_eff2->Divide(h_layer_3_eff2, dynamic_cast<TH1F*>(h_layer3_Cluster2), 1, 1);
-   h_layer_3_eff1->Add(h_layer_1_eff2, -1);
+   h_layer_3_eff1->Add(h_layer_3_eff2, -1);
 
    h_layer_3_eff1->SetTitle("");
    if ( pT_eff ) h_layer_3_eff1->GetXaxis()->SetTitle("Generated p_{T} [GeV]");
@@ -164,7 +164,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_3_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_3_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_3_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_3_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_3_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_3_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_3_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_3_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -191,7 +191,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_4_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_4_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_4_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_4_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_4_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_4_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_4_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_4_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -218,7 +218,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_5_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_5_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_5_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_5_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_5_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_5_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_5_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_5_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -245,7 +245,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_6_eff1->GetXaxis()->SetTitleSize(0.05);
    h_layer_6_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_6_eff1->GetXaxis()->SetTitleFont(42);
-   h_layer_6_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_layer_6_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_layer_6_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_layer_6_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_6_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -335,7 +335,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_1_eff1->GetXaxis()->SetTitleSize(0.05);
    h_disk_1_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_1_eff1->GetXaxis()->SetTitleFont(42);
-   h_disk_1_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_disk_1_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_disk_1_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_disk_1_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_1_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -362,7 +362,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_2_eff1->GetXaxis()->SetTitleSize(0.05);
    h_disk_2_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_2_eff1->GetXaxis()->SetTitleFont(42);
-   h_disk_2_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_disk_2_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_disk_2_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_disk_2_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_2_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -389,7 +389,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_3_eff1->GetXaxis()->SetTitleSize(0.05);
    h_disk_3_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_3_eff1->GetXaxis()->SetTitleFont(42);
-   h_disk_3_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_disk_3_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_disk_3_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_disk_3_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_3_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -416,7 +416,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_4_eff1->GetXaxis()->SetTitleSize(0.05);
    h_disk_4_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_4_eff1->GetXaxis()->SetTitleFont(42);
-   h_disk_4_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_disk_4_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_disk_4_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_disk_4_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_4_eff1->GetYaxis()->SetLabelSize(0.035);
@@ -443,7 +443,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_5_eff1->GetXaxis()->SetTitleSize(0.05);
    h_disk_5_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_5_eff1->GetXaxis()->SetTitleFont(42);
-   h_disk_5_eff1->GetYaxis()->SetRangeUser(-0.5, 0.5);
+   h_disk_5_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
    h_disk_5_eff1->GetYaxis()->SetTitle("Stub efficiency");
    h_disk_5_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_5_eff1->GetYaxis()->SetLabelSize(0.035);
