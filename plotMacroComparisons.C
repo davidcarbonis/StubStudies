@@ -110,7 +110,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_1_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_1_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_1_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_1_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_1_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_1_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_1_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_1_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -138,7 +138,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_2_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_2_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_2_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_2_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_2_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_2_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_2_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_2_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -165,7 +165,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_3_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_3_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_3_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_3_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_3_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_3_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_3_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_3_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -192,7 +192,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_4_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_4_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_4_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_4_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_4_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_4_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_4_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_4_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -219,7 +219,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_5_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_5_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_5_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_5_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_5_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_5_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_5_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_5_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -246,7 +246,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_layer_6_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_layer_6_eff1->GetXaxis()->SetTitleFont(42);
    h_layer_6_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_layer_6_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_layer_6_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_layer_6_eff1->GetYaxis()->SetLabelFont(42);
    h_layer_6_eff1->GetYaxis()->SetLabelSize(0.035);
    h_layer_6_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -336,7 +336,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_1_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_1_eff1->GetXaxis()->SetTitleFont(42);
    h_disk_1_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_disk_1_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_disk_1_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_disk_1_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_1_eff1->GetYaxis()->SetLabelSize(0.035);
    h_disk_1_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -363,7 +363,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_2_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_2_eff1->GetXaxis()->SetTitleFont(42);
    h_disk_2_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_disk_2_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_disk_2_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_disk_2_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_2_eff1->GetYaxis()->SetLabelSize(0.035);
    h_disk_2_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -390,7 +390,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_3_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_3_eff1->GetXaxis()->SetTitleFont(42);
    h_disk_3_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_disk_3_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_disk_3_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_disk_3_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_3_eff1->GetYaxis()->SetLabelSize(0.035);
    h_disk_3_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -417,7 +417,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_4_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_4_eff1->GetXaxis()->SetTitleFont(42);
    h_disk_4_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_disk_4_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_disk_4_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_disk_4_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_4_eff1->GetYaxis()->SetLabelSize(0.035);
    h_disk_4_eff1->GetYaxis()->SetTitleSize(0.035);
@@ -444,7 +444,7 @@ void plotMacroComparisons(TString inputFile1, TString inputFile2, bool pT_eff = 
    h_disk_5_eff1->GetXaxis()->SetTitleOffset(1.3);
    h_disk_5_eff1->GetXaxis()->SetTitleFont(42);
    h_disk_5_eff1->GetYaxis()->SetRangeUser(-0.1, 0.1);
-   h_disk_5_eff1->GetYaxis()->SetTitle("Stub efficiency");
+   h_disk_5_eff1->GetYaxis()->SetTitle("#Delta efficiency (stub finding)");
    h_disk_5_eff1->GetYaxis()->SetLabelFont(42);
    h_disk_5_eff1->GetYaxis()->SetLabelSize(0.035);
    h_disk_5_eff1->GetYaxis()->SetTitleSize(0.035);
