@@ -87,12 +87,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(options.Even
 #else:
 #    print "this is not a valid geometry!!!"
 
-list = FileUtils.loadListFromFile(options.inputMC)
-readFiles = cms.untracked.vstring(*list)
-#process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
-process.source = cms.Source("PoolSource", fileNames = readFiles)
+#list = FileUtils.loadListFromFile(options.inputMC)
+#readFiles = cms.untracked.vstring(*list)
+##process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(*inputMC))
+#process.source = cms.Source("PoolSource", fileNames = readFiles)
 
-#process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
+process.source = cms.Source("PoolSource", fileNames= cms.untracked.vstring(options.inputFiles))
 
 process.TFileService = cms.Service("TFileService", fileName = cms.string(options.output), closeFileFast = cms.untracked.bool(True))
 process.Timing = cms.Service("Timing", summaryOnly = cms.untracked.bool(True))
@@ -302,6 +302,7 @@ process.L1TrackNtuple = cms.EDAnalyzer('L1TrackNtupleMakerStubStudy',
                                        MCTruthTrackInputTag = cms.InputTag(L1TRUTH_NAME, L1TRK_LABEL),  # MCTruth input 
                                        # other input collections
                                        L1StubInputTag = cms.InputTag("TTStubsFromPhase2TrackerDigis","StubAccepted"), 
+                                       L1StubRejectedInputTag = cms.InputTag("TTStubsFromPhase2TrackerDigis","StubRejected"),
                                        MCTruthClusterInputTag = cms.InputTag("TTClusterAssociatorFromPixelDigis", "ClusterInclusive"),
                                        MCTruthStubInputTag = cms.InputTag("TTStubAssociatorFromPixelDigis", "StubAccepted"),
                                        TrackingParticleInputTag = cms.InputTag("mix", "MergedTrackTruth"),
